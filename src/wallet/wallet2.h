@@ -1662,6 +1662,7 @@ private:
     bool is_offline() const { return m_offline; }
 
     static std::string get_default_daemon_address() { CRITICAL_REGION_LOCAL(default_daemon_address_lock); return default_daemon_address; }
+    boost::shared_mutex m_transfers_mutex;
 
   private:
     /*!

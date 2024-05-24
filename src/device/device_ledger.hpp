@@ -34,7 +34,11 @@
 #include <string>
 #include "device.hpp"
 #include "log.hpp"
+#ifndef HAVE_MONERUJO
 #include "device_io_hid.hpp"
+#else
+#include "device_io_monerujo.hpp"
+#endif
 #include <mutex>
 
 namespace hw {
@@ -143,7 +147,11 @@ namespace hw {
         mutable std::mutex   command_locker;
 
         //IO
+    #ifndef HAVE_MONERUJO
         hw::io::device_io_hid hw_device;
+    #else
+        hw::io::device_io_monerujo hw_device;
+    #endif
         unsigned int  length_send;
         unsigned char buffer_send[BUFFER_SEND_SIZE];
         unsigned int  length_recv;

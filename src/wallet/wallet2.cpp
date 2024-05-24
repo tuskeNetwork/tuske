@@ -2446,6 +2446,7 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
           uint64_t amount = tx.vout[o].amount ? tx.vout[o].amount : tx_scan_info[o].amount;
           if (!pool)
           {
+        boost::unique_lock<boost::shared_mutex> lock(m_transfers_mutex);
 	    m_transfers.push_back(transfer_details{});
 	    transfer_details& td = m_transfers.back();
 	    td.m_block_height = height;
@@ -2549,6 +2550,7 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
           uint64_t extra_amount = amount - burnt;
           if (!pool)
           {
+            boost::unique_lock<boost::shared_mutex> lock(m_transfers_mutex);
             transfer_details &td = m_transfers[kit->second];
 	    td.m_block_height = height;
 	    td.m_internal_output_index = o;

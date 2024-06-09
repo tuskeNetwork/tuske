@@ -719,6 +719,8 @@ namespace nodetool
         full_addrs.insert("24.144.93.0:20240");//us node
         full_addrs.insert("164.92.173.194:20240");//de node
         full_addrs.insert("178.128.116.242:20240");//sg node
+        full_addrs.insert("170.64.203.10:20240");//au node
+        full_addrs.insert("68.183.82.171:20240");//in node
     }
     return full_addrs;
   }
@@ -849,23 +851,19 @@ namespace nodetool
       if (m_nettype == cryptonote::MAINNET)
       {
         return {
-          "xwvz3ekocr3dkyxfkmgm2hvbpzx2ysqmaxgter7znnqrhoicygkfswid.onion:18083",
-          "4pixvbejrvihnkxmduo2agsnmc3rrulrqc7s3cbwwrep6h6hrzsibeqd.onion:18083",
-          "zbjkbsxc5munw3qusl7j2hpcmikhqocdf4pqhnhtpzw5nt5jrmofptid.onion:18083",
-          "qz43zul2x56jexzoqgkx2trzwcfnr6l3hbtfcfx54g4r3eahy3bssjyd.onion:18083",
-          "plowsof3t5hogddwabaeiyrno25efmzfxyro2vligremt7sxpsclfaid.onion:18083",
-          "plowsoffjexmxalw73tkjmf422gq6575fc7vicuu4javzn2ynnte6tyd.onion:18083",
+          "tuske5hkcseb6srksudc2eiuhkcetf7ibbkz3hsbfbar2kyi2lykkrid.onion:20243",
+          "tusketluwz3igsax57dpwetybs5oacvrfcre6xdwl6cheax3i5wh5uyd.onion:20243",
         };
       }
       return {};
     case epee::net_utils::zone::i2p:
       if (m_nettype == cryptonote::MAINNET)
       {
-        return {
+        return {/*//next release
           "s3l6ke4ed3df466khuebb4poienoingwof7oxtbo6j4n56sghe3a.b32.i2p:18080",
           "sel36x6fibfzujwvt4hf5gxolz6kd3jpvbjqg6o3ud2xtionyl2q.b32.i2p:18080",
           "uqj3aphckqtjsitz7kxx5flqpwjlq5ppr3chazfued7xucv3nheq.b32.i2p:18080",
-          "vdmnehdjkpkg57nthgnjfuaqgku673r5bpbqg56ix6fyqoywgqrq.b32.i2p:18080",
+          "vdmnehdjkpkg57nthgnjfuaqgku673r5bpbqg56ix6fyqoywgqrq.b32.i2p:18080",*/
         };
       }
       return {};
